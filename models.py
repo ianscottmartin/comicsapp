@@ -23,7 +23,7 @@ class User(Base):
     email = Column(String)
 
 #comics = relationship("Comic", secondary="comic_user")   
-    
+comics= relationship("Comic", backref="owner")  
     
  
 class Comic(Base):
@@ -35,3 +35,4 @@ class Comic(Base):
     publisher = Column(String)   
     
 #users = relationship("User", secondary="comic_user")
+user_id = Column(Integer, ForeignKey("users.id"))
