@@ -36,3 +36,6 @@ class Comic(Base):
     
 #users = relationship("User", secondary="comic_user")
 user_id = Column(Integer, ForeignKey("users.id"))
+
+
+

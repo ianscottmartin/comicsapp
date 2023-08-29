@@ -23,7 +23,7 @@ if __name__ == '__main__':
     session = Session()
     create_fake_users(session, total=20)
     session.commit()
-    
+    #session.bulk_save_objects(create_fake_users)
     
     
 def create_fake_comics(session, total=10):
@@ -36,7 +36,7 @@ def create_fake_comics(session, total=10):
         )
     session.add(comics)
     session.commit()
-
+    #session.bulk_save_objects(create_fake_comics)
 
 
 if __name__ == '__main__':
@@ -55,3 +55,8 @@ if __name__ == '__main__':
     create_fake_users(session, total=20)
     create_fake_comics(session, total=15)
     
+    
+import ipdb; ipdb.set_trace()
+
+
+
