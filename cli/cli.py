@@ -4,13 +4,13 @@ from sqlalchemy.orm import sessionmaker
 from models import User
 
 # Configure database connection
-DATABASE_URL = 'sqlite:///myapp.db'
-engine = create_engine(DATABASE_URL)
+
+engine = create_engine("sqlite:///comicdata.db")
 Session = sessionmaker(bind=engine)
 
 @click.group()
 def cli():
-    """MyApp CLI"""
+    """Comic Selector"""
 
 @cli.command()
 @click.argument('username')
