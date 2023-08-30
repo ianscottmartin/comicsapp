@@ -45,18 +45,18 @@ from sqlalchemy.orm import declarative_base
 
 Base = declarative_base()
 
-class UserComicAssociation(Base):
-    __tablename__ = 'user_comic_association'
+# class UserComicAssociation(Base):
+#     __tablename__ = 'user_comic_association'
 
-    user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
-    comic_id = Column(Integer, ForeignKey('comics.id'), primary_key=True)
+#     user_id = Column(Integer, ForeignKey('users.id'), primary_key=True)
+#     comic_id = Column(Integer, ForeignKey('comics.id'), primary_key=True)
 
 class User(Base):
     __tablename__ = 'users'
 
     id = Column(Integer, primary_key=True)
     username = Column(String, unique=True)
-    comics = relationship("Comic", secondary="user_comic_association")
+    # comics = relationship("Comic", back_ref="user_comic_association")
 
 class Comic(Base):
     __tablename__ = 'comics'
@@ -64,5 +64,5 @@ class Comic(Base):
     id = Column(Integer, primary_key=True)
     title = Column(String)
     publisher = Column(String)
-    users = relationship("User", secondary="user_comic_association")
+    # users = relationship("User", secondary="user_comic_association")
 

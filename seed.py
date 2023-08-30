@@ -90,8 +90,8 @@ session.bulk_save_objects(users)
 session.commit()
 
 
-#session.query(User).delete()
-#session.commit()
+session.query(User).delete()
+session.commit()
 
 
 comics = [
